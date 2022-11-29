@@ -6,17 +6,20 @@ using System.Linq;
 
 namespace Exercicio.Tres
 {
+    /// <summary>
+    /// Aplicado conceito do algoritmo Busca em largura (Breadth - first search)
+    /// </summary>
     public class GPS
     {
         public List<int> GpsFitSolution(string filePath)
         {
             var contador = 0;
-            var hashtable = new Hashtable();
+            var totalEstradas = 0;
             var totalCidades = 0;
             var dados = new List<string>();
+            var hashtable = new Hashtable();
             var cidades = new List<string>();
             var cidadeOrigem = string.Empty;
-            var totalEstradas = 0;
             var rotas = new List<Rota>();
             var viagens = new List<int>();
 
