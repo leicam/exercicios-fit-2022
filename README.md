@@ -13,19 +13,21 @@ QUESTÕES
 Um número primo é aquele que é divisível apenas por um e por ele mesmo. 
 Obs: O número 1 não é primo.
 
- Escreva uma função otimizada que, dado um número inteiro positivo, retorne true se o número for primo ou false caso contrário, com o menor número de iterações possível.
+Escreva uma função otimizada que, dado um número inteiro positivo, retorne true se o número for primo ou false caso contrário, com o menor número de iterações possível.
 
 Imprima o resultado em tela da seguinte forma: 
 “O número num é primo. Número de iterações necessárias: count”
 ou
 “O número num não é primo. Número de iterações necessárias: count”
+
+
 2) Prática - Movimento do bot
 Existe um bot localizado em um par de coordenadas inteiras, (x, y). Ele pode ser movido para um outro par de coordenadas. Embora o bot possa se mover quantas vezes quiser, ele só pode fazer os dois tipos de movimentos a seguir:
     1. Da posição (x, y) para a posição (x + y, y).
     2. Da posição (x, y) para a posição (x, x + y).
 Por exemplo, se o bot começa em (1, 1), ele pode fazer a seguinte sequência de movimentos: (1, 1) → (1, 2) → (3, 2) → (5, 2). Observe que o movimento sempre será para cima ou para a direita.
 
- Escreva uma função que, dadas as coordenadas iniciais e finais, determine se o bot pode alcançar as coordenadas finais de acordo com as regras de movimento.
+Escreva uma função que, dadas as coordenadas iniciais e finais, determine se o bot pode alcançar as coordenadas finais de acordo com as regras de movimento.
 Descrição da função:
 A função deve retornar true se o bot puder atingir seu objetivo, caso contrário, retorne false.
 A função tem o(s) seguinte(s) parâmetro(s):
@@ -33,6 +35,8 @@ A função tem o(s) seguinte(s) parâmetro(s):
   y1: valor inteiro, coordenada y inicial
   x2: valor inteiro, coordenada x final
   y2: valor inteiro, coordenada y final
+  
+
 3) Prática - GPS
 Você é um desenvolvedor responsável pela manutenção de um software GPS famoso no mercado. Você recebeu a tarefa de calcular a melhor rota possível entre duas cidades distintas. Seu programa receberá informações relacionadas às cidades e estradas que os conectam entre si. Além disso, este famoso software de GPS pode se comunicar com satélites para receber dados em tempo real sobre o tráfego fluxo das cidades. Portanto, seu programa precisará considerar algum tempo gasto durante o tráfego intenso, quando tentando deixar algumas cidades.
 Para simplificar o desenvolvimento de software, considere o seguinte:
