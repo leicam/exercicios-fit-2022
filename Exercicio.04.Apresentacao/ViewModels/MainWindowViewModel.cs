@@ -1,46 +1,48 @@
-﻿using Exercicio.Quatro.Apresentacao.Classes;
+﻿using Exercicio._04.Apresentacao.UserControls;
+using Exercicio.Quatro.Apresentacao.Classes;
+using Exercicio.Quatro.Apresentacao.Commands;
 using Exercicio.Quatro.Apresentacao.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace Exercicio.Quatro.Apresentacao.ViewModels
 {
     public class MainWindowViewModel : AbstractViewModel
     {
-        private decimal _total = 0.00m;
+        #region variaveis privadas
+
+        private Page _currentUserControl;
         private ObservableCollection<ProdutoModel> _produtos = new ObservableCollection<ProdutoModel>();
 
-        public decimal Total 
+        #endregion variaveis privadas
+
+        #region propriedades
+
+        public Page CurrentUserControl 
         { 
-            get => _total;
-            set => SetField(ref _total, value);
+            get => _currentUserControl;
+            set => SetField(ref _currentUserControl, value);
         }
 
         public ObservableCollection<ProdutoModel> Produtos 
         { 
-            get => _produtos;
-            set => SetField(ref _produtos, value); 
+            get => _produtos; 
+            set => SetField(ref _produtos, value);
         }
+
+        #endregion propriedades
+
+        #region construtores
 
         public MainWindowViewModel()
         {
-            Produtos.Add(new ProdutoModel()
-            {
-                Imagem = new BitmapImage(new Uri(@"../net5.0-windows/Resources/Images/p1.png", UriKind.Relative)),
-                Descricao = "Cheter Gloves",
-                Referencia = "Ref. 002322111",
-                Cor = "Black",
-                Quantidade = "1",
-                Preco = 20.00m,
-            });
-
-            Total = Produtos.Sum(x => x.Preco);
+            CurrentUserControl = new ucLista();
         }
+
+        #endregion construtores
     }
 }

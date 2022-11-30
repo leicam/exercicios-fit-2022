@@ -68,18 +68,30 @@
         </Style>
 
         <Style x:Key="botaoRemover" TargetType="Button">
+            <Setter Property="Background" Value="#878382"/>
             <Setter Property="Width" Value="50"/>
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="#ECF0F1" BorderThickness="0" Padding="5">
+                        <Border Background="{TemplateBinding Background}" Padding="5">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
 
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#606060"/>
+                </Trigger>
+
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#303030"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
         <Style x:Key="titulo" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#E9E9E9"/>
             <Setter Property="FontSize" Value="14"/>

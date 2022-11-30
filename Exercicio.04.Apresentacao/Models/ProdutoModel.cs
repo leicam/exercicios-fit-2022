@@ -1,9 +1,4 @@
 ﻿using Exercicio.Quatro.Apresentacao.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace Exercicio.Quatro.Apresentacao.Models
@@ -11,11 +6,11 @@ namespace Exercicio.Quatro.Apresentacao.Models
     public class ProdutoModel : AbstractModel
     {
         private ImageSource _imagem;
-        private string _descricao;
-        private string _referecia;
-        private string _cor;
-        private string _quantidade;
-        private decimal _preco;
+        private string _descricao = string.Empty;
+        private string _referecia = string.Empty;
+        private string _cor = string.Empty;
+        private int _quantidade = 1;
+        private decimal _preco = 0.0m;
 
         public ImageSource Imagem 
         { 
@@ -41,7 +36,7 @@ namespace Exercicio.Quatro.Apresentacao.Models
             set => SetField(ref _cor, value);
         }
 
-        public string Quantidade
+        public int Quantidade
         {
             get => _quantidade;
             set => SetField(ref _quantidade, value);
