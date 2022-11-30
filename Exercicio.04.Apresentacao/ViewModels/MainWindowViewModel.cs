@@ -13,7 +13,14 @@ namespace Exercicio.Quatro.Apresentacao.ViewModels
 {
     public class MainWindowViewModel : AbstractViewModel
     {
+        private decimal _total = 0.00m;
         private ObservableCollection<ProdutoModel> _produtos = new ObservableCollection<ProdutoModel>();
+
+        public decimal Total 
+        { 
+            get => _total;
+            set => SetField(ref _total, value);
+        }
 
         public ObservableCollection<ProdutoModel> Produtos 
         { 
@@ -25,13 +32,15 @@ namespace Exercicio.Quatro.Apresentacao.ViewModels
         {
             Produtos.Add(new ProdutoModel()
             {
-                Imagem = new BitmapImage(new Uri("../Resources/Images/p1.png")),
-                Descriucao = "Cheter Gloves",
+                Imagem = new BitmapImage(new Uri(@"../net5.0-windows/Resources/Images/p1.png", UriKind.Relative)),
+                Descricao = "Cheter Gloves",
                 Referencia = "Ref. 002322111",
                 Cor = "Black",
                 Quantidade = "1",
-                Preco = "20,00 BRL",
+                Preco = 20.00m,
             });
+
+            Total = Produtos.Sum(x => x.Preco);
         }
     }
 }

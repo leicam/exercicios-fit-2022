@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Exercicio._04.Apresentacao"
+        xmlns:userControls="clr-namespace:Exercicio._04.Apresentacao.UserControls"
         mc:Ignorable="d"
         Title="" Height="700" Width="1180" Background="Transparent" WindowStyle="None"
         WindowStartupLocation="CenterScreen" AllowsTransparency="True">
@@ -25,12 +25,12 @@
         <!--#region header-->
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Background="#444444"
                     FlowDirection="RightToLeft">
-            <Button Style="{StaticResource botaoFechar}">
+            <Button Style="{StaticResource botaoFechar}" CommandParameter="{Binding}" Command="{Binding FecharJanela}">
                 <Image Width="20" Margin="2 0 0 0" Source="/Resources/Icons/close.png"/>
             </Button>
 
-            <Button Style="{StaticResource botaoMinimizar}">
-                <Image Width="20" Margin="5 0 0 0" Source="/Resources/Icons/mini.png"/>
+            <Button Style="{StaticResource botaoMinimizar}" CommandParameter="{Binding}" Command="{Binding MinimizarJanela}">
+                <Image Width="20" Margin="5 0 0 0" Source="/Resources/Icons/mini.png" />
             </Button>
         </StackPanel>
         <!--#endregion header-->
@@ -41,7 +41,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
 
             <StackPanel Orientation="Horizontal" Margin="0 40 0 30">
@@ -50,9 +50,185 @@
                 <Rectangle VerticalAlignment="Stretch" Fill="#808080" Width="0.7" Margin="20 5 20 5"/>
                 <TextBlock Text="Carrinho de Compras" FontSize="26" VerticalAlignment="Center"/>
             </StackPanel>
-            
-            
+
+            <StackPanel Grid.Row="1" Margin="5 85 0 10">
+                <DataGrid ItemsSource="{Binding Produtos}" HeadersVisibility="None"
+                          AutoGenerateColumns="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGrid">
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="BorderBrush" Value="#ECF0F1"/>
+                            <Setter Property="Background" Value="#ECF0F1"/>
+                            <Setter Property="Foreground" Value="Black"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Background" Value="#e0e0e0"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.Resources>
+                    
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="115">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Ellipse Height="80" Width="80" Margin="15 10 0 10" HorizontalAlignment="Left">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="{Binding Imagem}"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Descricao}" FontWeight="SemiBold" FontSize="16" Margin="15 30 0 0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{Binding Referencia}" FontSize="11" VerticalAlignment="Center" Margin="15 5 0 0" Foreground="#909090"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Cor}" FontSize="16" VerticalAlignment="Center" Margin="15 0 0 0" FontWeight="SemiBold"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="27">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Quantidade}" FontSize="16" VerticalAlignment="Center" Margin="10 0 0 0" FontWeight="SemiBold"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15 0 0 0">
+                                        <Button Style="{StaticResource botaoContador}">
+                                            <Image Source="../Resources/Icons/add.png"/>
+                                        </Button>
+
+                                        <Button Style="{StaticResource botaoContador}" Margin="0 5 0 0">
+                                            <Image Source="../Resources/Icons/low.png"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="110">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="R$" FontSize="16" VerticalAlignment="Center" Margin="15 0 0 0" FontWeight="SemiBold"/>
+                                        <TextBlock Text="{Binding Preco}" FontSize="16" VerticalAlignment="Center" Margin="5 0 0 0" FontWeight="SemiBold"/>
+                                    </StackPanel>
+                                    
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="50">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource botaoRemover}" Margin="0 0 0 0">
+                                        <Image Source="../Resources/Icons/remove.png" Width="18"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+
+            <!--#region totalizador-->
+
+            <Grid Grid.Row="2" Margin="0 0 50 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock Text="Total:  " FontSize="16"/>
+                    <TextBlock Text="R$ " FontSize="16" FontWeight="SemiBold"/>
+                    <TextBlock Text="{Binding Total}" FontSize="16" FontWeight="SemiBold"/>
+                </StackPanel>
+            </Grid>
+
+            <!--#endregion totalizador -->
         </Grid>
         <!--#endregion body-->
+        
+        <!--#region checkout-->
+        <Grid Grid.Column="1" Background="#4B4643" Grid.Row="1">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="10" BlurRadius="50"/>
+            </Grid.Effect>
+
+            <Border HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="130" Margin="-30 50 0 0"
+                    Background="#4B4643" CornerRadius="10 0 0 10" Padding="10 20 5 20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Ellipse Width="8" Height="8" Fill="#8B8A89" Grid.Row="0"/>
+                    <Ellipse Width="8" Height="8" Fill="#F1C40F" Grid.Row="1"/>
+                    <Ellipse Width="8" Height="8" Fill="#8B8A89" Grid.Row="2"/>
+                </Grid>
+            </Border>
+
+            <StackPanel VerticalAlignment="Top" Margin="50 100 50 0">
+                <TextBlock Text="Cartão de Crédito" FontSize="24" FontWeight="SemiBold" Margin="0 0 0 70" Foreground="#F1C40F"/>
+                <TextBlock Text="Selecione a Bandeira" Style="{StaticResource titulo}"/>
+
+                <Grid Margin="0 15 0 30">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" HorizontalAlignment="Left" Source="Resources/Images/mastercard.png" Width="25" Style="{StaticResource icone}"/>
+                    <Image Grid.Column="1" HorizontalAlignment="Left" Source="Resources/Images/visa.png" Width="25" Style="{StaticResource icone}"/>
+                    <Image Grid.Column="2" HorizontalAlignment="Left" Source="Resources/Images/credit.png" Width="25" Style="{StaticResource icone}"/>
+                </Grid>
+
+                <TextBlock Text="Número Cartão" Style="{StaticResource titulo}"/>
+                <TextBox Margin="0 5 0 30"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="Data de Validade" Style="{StaticResource titulo}"/>
+                        <TextBox Margin="0 5 0 0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="30 0 0 0" Width="50">
+                        <TextBlock Text="CVV" Style="{StaticResource titulo}"/>
+                        <TextBox Margin="0 5 0 0"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <Button Content="Finalizar" Style="{StaticResource botaoFinalizar}"/>
+        </Grid>
+        <!--#endregion checkout -->
     </Grid>
 </Window>

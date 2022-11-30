@@ -8,11 +8,10 @@ namespace Exercicio.Quatro.Apresentacao.Classes
 {
     public abstract class AbstractNotifyPropertyChanged : INotifyPropertyChanged
     {
-        private Window _currentWindow = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-        
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void CloseWindow() => _currentWindow.Close();
+        public void FecharJanela() => ObterJanelaAtiva().Close();
+        public void MinimizarJanela() => ObterJanelaAtiva().WindowState = WindowState.Minimized;
 
         public void SetField<T>(ref T field, T value, [CallerMemberName] string nameProperty = null)
         {
@@ -25,5 +24,8 @@ namespace Exercicio.Quatro.Apresentacao.Classes
 
         private void RaizePropertyChange(string nameProperty)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameProperty));
+
+        private Window ObterJanelaAtiva()
+            => Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
     }
 }

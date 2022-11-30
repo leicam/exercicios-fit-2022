@@ -15,7 +15,7 @@ namespace Exercicio.Quatro.Apresentacao.Models
         private string _referecia;
         private string _cor;
         private string _quantidade;
-        private string _preco;
+        private decimal _preco;
 
         public ImageSource Imagem 
         { 
@@ -23,7 +23,7 @@ namespace Exercicio.Quatro.Apresentacao.Models
             set => SetField(ref _imagem, value);
         }
 
-        public string Descriucao
+        public string Descricao
         {
             get => _descricao;
             set => SetField(ref _descricao, value);
@@ -47,7 +47,7 @@ namespace Exercicio.Quatro.Apresentacao.Models
             set => SetField(ref _quantidade, value);
         }
 
-        public string Preco
+        public decimal Preco
         {
             get => _preco;
             set => SetField(ref _preco, value);
