@@ -9,31 +9,57 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\Icons\" />
+    <None Remove="Resources\Icons\add.png" />
+    <None Remove="Resources\Icons\close.png" />
+    <None Remove="Resources\Icons\credit.png" />
+    <None Remove="Resources\Icons\left.png" />
+    <None Remove="Resources\Icons\low.png" />
+    <None Remove="Resources\Icons\mastercard.png" />
+    <None Remove="Resources\Icons\mini.png" />
+    <None Remove="Resources\Icons\visa.png" />
+    <None Remove="Resources\Images\p1.png" />
+    <None Remove="Resources\Images\p2.png" />
+    <None Remove="Resources\Images\p3.png" />
+    <None Remove="Resources\Images\p4.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\Icons\add.png">
+    <Resource Include="Resources\Icons\add.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Icons\close.png">
+    </Resource>
+    <Resource Include="Resources\Icons\close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Icons\credit.png">
+    </Resource>
+    <Resource Include="Resources\Icons\credit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Icons\left.png">
+    </Resource>
+    <Resource Include="Resources\Icons\left.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Icons\low.png">
+    </Resource>
+    <Resource Include="Resources\Icons\low.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Icons\mastercard.png">
+    </Resource>
+    <Resource Include="Resources\Icons\mastercard.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Icons\visa.png">
+    </Resource>
+    <Resource Include="Resources\Icons\mini.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Resource>
+    <Resource Include="Resources\Icons\visa.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\p1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\p2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\p3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Images\p4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

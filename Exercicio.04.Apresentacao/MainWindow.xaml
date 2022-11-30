@@ -22,11 +22,37 @@
 
         <!--#endregion recursos-->
         
-        <!--#region titulo-->
+        <!--#region header-->
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Background="#444444"
-                    FlowDirection="RightToLeft" MouseDown="{Binding MouseDown}">
-            
+                    FlowDirection="RightToLeft">
+            <Button Style="{StaticResource botaoFechar}">
+                <Image Width="20" Margin="2 0 0 0" Source="/Resources/Icons/close.png"/>
+            </Button>
+
+            <Button Style="{StaticResource botaoMinimizar}">
+                <Image Width="20" Margin="5 0 0 0" Source="/Resources/Icons/mini.png"/>
+            </Button>
         </StackPanel>
-        <!--#endregion titulo-->
+        <!--#endregion header-->
+        
+        <!--#region body-->
+
+        <Grid Grid.Row="1" Background="#ECF0F1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Margin="0 40 0 30">
+                <TextBlock Text="FIT" FontSize="28" FontWeight="SemiBold" FontFamily="Trebuchet MS" 
+                       VerticalAlignment="Center" Margin="50 0 0 0"/>
+                <Rectangle VerticalAlignment="Stretch" Fill="#808080" Width="0.7" Margin="20 5 20 5"/>
+                <TextBlock Text="Carrinho de Compras" FontSize="26" VerticalAlignment="Center"/>
+            </StackPanel>
+            
+            
+        </Grid>
+        <!--#endregion body-->
     </Grid>
 </Window>
