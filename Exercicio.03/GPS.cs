@@ -13,7 +13,7 @@ namespace Exercicio.Tres
     {
         public List<int> GpsFitSolution(string filePath)
         {
-            var contador = 0;
+            var totalCasosTeste = 0;
             var totalEstradas = 0;
             var totalCidades = 0;
             var dados = new List<string>();
@@ -26,13 +26,13 @@ namespace Exercicio.Tres
 
             foreach (string linha in File.ReadLines(filePath))
             {
-                if (contador == 0)
+                dados = linha.Trim().Split(' ').ToList();
+
+                if (totalCasosTeste == 0)
                 {
-                    contador++;
+                    int.TryParse(dados.FirstOrDefault(), out totalCasosTeste);
                     continue;
                 }
-
-                dados = linha.Trim().Split(' ').ToList();
 
                 if (dados.Count == 1 && totalCidades == 0 && int.TryParse(dados.FirstOrDefault(), out totalCidades))
                     continue;
@@ -73,6 +73,9 @@ namespace Exercicio.Tres
                 rotas.Add(new Rota(dados[0].ToString(), dados[1].ToString(), int.Parse(dados[2].ToString())));
                 totalEstradas--;
             }
+
+            if (totalCasosTeste != viagens.Count)
+                throw new Exception("Total de casos de teste não estão em conformidade! Verifique.");
 
             return viagens;
         }
