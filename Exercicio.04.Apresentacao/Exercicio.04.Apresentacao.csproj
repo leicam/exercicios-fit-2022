@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Icons\add-black.png" />
     <None Remove="Resources\Icons\add.png" />
+    <None Remove="Resources\Icons\cart.png" />
     <None Remove="Resources\Icons\close.png" />
     <None Remove="Resources\Icons\credit.png" />
     <None Remove="Resources\Icons\left.png" />
@@ -25,7 +27,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Icons\add-black.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Icons\add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\cart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Icons\close.png">
