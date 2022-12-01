@@ -82,6 +82,9 @@ namespace Exercicio.Quatro.Apresentacao.Models
 
             var item = Produtos.FirstOrDefault(x => x.Referencia == produto.Referencia);
 
+            if (item.Quantidade <= 0)
+                throw new Exception("Produto sem quantidade.");
+
             item.Estoque += 1;
             item.Quantidade -= 1;
 
