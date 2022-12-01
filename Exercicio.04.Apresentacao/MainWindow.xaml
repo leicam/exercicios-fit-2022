@@ -32,7 +32,7 @@
         <!--#endregion header-->
         
         <!--#region body-->
-        <Frame Grid.Row="1" Content="{Binding CurrentUserControl}" />
+        <Frame Grid.Row="1" Content="{Binding CurrentUserControl}" NavigationUIVisibility="Hidden"/>
         <!--#endregion body-->
     </Grid>
 </Window>

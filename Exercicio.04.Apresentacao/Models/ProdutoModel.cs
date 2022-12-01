@@ -9,6 +9,7 @@ namespace Exercicio.Quatro.Apresentacao.Models
         private string _descricao = string.Empty;
         private string _referecia = string.Empty;
         private string _cor = string.Empty;
+        private string _sobre = string.Empty;
         private int _estoque = 0;
         private int _quantidade = 0;
         private decimal _preco = 0.0m;
@@ -35,6 +36,12 @@ namespace Exercicio.Quatro.Apresentacao.Models
         {
             get => _cor;
             set => SetField(ref _cor, value);
+        }
+
+        public string Sobre
+        {
+            get => _sobre;
+            set => SetField(ref _sobre, value);
         }
 
         public int Estoque 

@@ -79,6 +79,12 @@
                                             <TextBlock Margin="5 0" Text="R$" FontSize="15"/>
                                             <TextBlock Text="{Binding Preco}" FontSize="15"/>
                                         </StackPanel>
+
+                                        
+                                        <TextBlock Text="{Binding Sobre}" Margin="15 30 30 30"
+                                                   TextWrapping="Wrap" 
+                                                   FontSize="12" VerticalAlignment="Center"
+                                                   Width="200" Height="190" />
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
@@ -112,8 +118,9 @@
                 <TextBlock Text="Subtotal :" Margin="0 10 0 0" FontSize="16"/>
                 <TextBlock Text="R$ " FontWeight="SemiBold" FontSize="16" Margin="10 10 0 0"/>
                 <TextBlock Text="{Binding Pedido.Total}" FontWeight="SemiBold" FontSize="16" Margin="5 10 0 0"/>
-
-                <Button Style="{StaticResource botaoRodape}" Margin=" 0 5 0 0">
+                
+                <Button Style="{StaticResource botaoRodape}" Margin=" 0 5 0 0"
+                        CommandParameter="{Binding }" Command="{Binding NavegarParaCarrinho}">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="../Icons/cart.png" Width="20" Margin="15 3 0 0"/>
                         <TextBlock Text="Carrinho" VerticalAlignment="Center" Margin="5 0 15 0"/>

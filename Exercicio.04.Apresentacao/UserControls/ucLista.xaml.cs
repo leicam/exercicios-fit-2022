@@ -1,4 +1,6 @@
-﻿using Exercicio.Quatro.Apresentacao.ViewModels;
+﻿using Exercicio.Quatro.Apresentacao.Models;
+using Exercicio.Quatro.Apresentacao.ViewModels;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
 namespace Exercicio._04.Apresentacao.UserControls
@@ -9,10 +11,10 @@ namespace Exercicio._04.Apresentacao.UserControls
     /// </summary>
     public partial class ucLista : Page
     {
-        public ucLista()
+        public ucLista(ObservableCollection<ProdutoModel> produtos)
         {
             InitializeComponent();
-            DataContext = new ListaViewModel();
+            DataContext = new ListaViewModel(produtos);
         }
     }
 }

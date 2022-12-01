@@ -47,6 +47,22 @@ namespace Exercicio.Quatro.Apresentacao.Models
             Totalizar();
         }
 
+        public void AdicionarQuantidade(ProdutoModel produto)
+        {
+            if (produto.Estoque <= 0)
+                throw new Exception("Produto sem estoque. Tente novamente mais tarde.");
+
+            if (!Produtos.Contains(produto))
+                throw new Exception("Produto não pertence ao carrinho!");
+
+            var item = Produtos.FirstOrDefault(x => x.Referencia == produto.Referencia);
+
+            item.Estoque -= 1;
+            item.Quantidade += 1;
+
+            Totalizar();
+        }
+
         public void RemoverProduto(ProdutoModel produto)
         {
             if (!Produtos.Contains(produto))
@@ -56,6 +72,19 @@ namespace Exercicio.Quatro.Apresentacao.Models
             produto.Quantidade = 0;
 
             Produtos.Remove(produto);
+            Totalizar();
+        }
+
+        public void RemoverQuantidade(ProdutoModel produto)
+        {
+            if (!Produtos.Contains(produto))
+                throw new Exception("Produto não pertence ao carrinho!");
+
+            var item = Produtos.FirstOrDefault(x => x.Referencia == produto.Referencia);
+
+            item.Estoque += 1;
+            item.Quantidade -= 1;
+
             Totalizar();
         }
 

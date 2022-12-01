@@ -1,5 +1,7 @@
 ﻿using Exercicio.Quatro.Apresentacao.Classes;
 using Exercicio.Quatro.Apresentacao.ViewModels;
+using System;
+using System.Windows;
 
 namespace Exercicio.Quatro.Apresentacao.Commands
 {
@@ -7,13 +9,16 @@ namespace Exercicio.Quatro.Apresentacao.Commands
     {
         public override void Execute(object parameter)
         {
-            var vm = parameter as CarrinhoViewModel;
-
-            if (vm.ProdutoSelecionado.Quantidade == 0)
-                return;
-
-            vm.ProdutoSelecionado.Quantidade -= 1;
-            vm.Totalizar();
+            try
+            {
+                (parameter as CarrinhoViewModel)
+                    .Pedido
+                    .RemoverQuantidade((parameter as CarrinhoViewModel).ProdutoSelecionado);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Remover Produto", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

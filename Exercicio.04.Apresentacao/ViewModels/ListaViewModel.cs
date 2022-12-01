@@ -42,63 +42,17 @@ namespace Exercicio.Quatro.Apresentacao.ViewModels
         #region comandos
 
         public AdicionarProdutoCarrinhoCommand AdicionarProdutoCarrinho { get; private set; } = new AdicionarProdutoCarrinhoCommand();
+        public NavegarParaCarrinhoCommand NavegarParaCarrinho { get; private set; } = new NavegarParaCarrinhoCommand();
 
         #endregion comandos
 
         #region construtores
 
-        public ListaViewModel()
+        public ListaViewModel(ObservableCollection<ProdutoModel> produtos)
         {
-            CarregarProdutos();
+            Produtos = produtos;
         }
 
         #endregion construtores
-
-        #region metodos
-
-        private void CarregarProdutos()
-        {
-            Produtos.Add(new ProdutoModel()
-            {
-                Imagem = new BitmapImage(new Uri(@"../net5.0-windows/Resources/Images/p1.png", UriKind.Relative)),
-                Descricao = "Luvas Cheter",
-                Referencia = "Ref. 002322111",
-                Cor = "Preto",
-                Estoque = 10,
-                Preco = 159.90m,
-            });
-
-            Produtos.Add(new ProdutoModel()
-            {
-                Imagem = new BitmapImage(new Uri(@"../net5.0-windows/Resources/Images/p2.png", UriKind.Relative)),
-                Descricao = "Sapato Matric",
-                Referencia = "Ref. 006542123",
-                Cor = "Verde",
-                Estoque = 10,
-                Preco = 399.90m,
-            });
-
-            Produtos.Add(new ProdutoModel()
-            {
-                Imagem = new BitmapImage(new Uri(@"../net5.0-windows/Resources/Images/p3.png", UriKind.Relative)),
-                Descricao = "Meias Patizen",
-                Referencia = "Ref. 001289258",
-                Cor = "Creme",
-                Estoque = 0,
-                Preco = 29.90m,
-            });
-
-            Produtos.Add(new ProdutoModel()
-            {
-                Imagem = new BitmapImage(new Uri(@"../net5.0-windows/Resources/Images/p4.png", UriKind.Relative)),
-                Descricao = "Camiseta Beni",
-                Referencia = "Ref. 007197660",
-                Cor = "Preto",
-                Estoque = 10,
-                Preco = 89.90m,
-            });
-        }
-
-        #endregion metodos
     }
 }

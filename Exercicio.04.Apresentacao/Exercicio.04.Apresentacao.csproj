@@ -24,54 +24,62 @@
     <None Remove="Images\p2.png" />
     <None Remove="Images\p3.png" />
     <None Remove="Images\p4.png" />
+    <None Remove="Images\p5.png" />
+    <None Remove="Images\p6.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icons\add-black.png">
+    <Content Include="Icons\add-black.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\add.png">
+    </Content>
+    <Content Include="Icons\add.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\cart.png">
+    </Content>
+    <Content Include="Icons\cart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\close.png">
+    </Content>
+    <Content Include="Icons\close.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\credit.png">
+    </Content>
+    <Content Include="Icons\credit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\left.png">
+    </Content>
+    <Content Include="Icons\left.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\low.png">
+    </Content>
+    <Content Include="Icons\low.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\mastercard.png">
+    </Content>
+    <Content Include="Icons\mastercard.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\mini.png">
+    </Content>
+    <Content Include="Icons\mini.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\remove.png">
+    </Content>
+    <Content Include="Icons\remove.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\visa.png">
+    </Content>
+    <Content Include="Icons\visa.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\p1.png">
+    </Content>
+    <Content Include="Images\p1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\p2.png">
+    </Content>
+    <Content Include="Images\p2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\p3.png">
+    </Content>
+    <Content Include="Images\p3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\p4.png">
+    </Content>
+    <Content Include="Images\p4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
+    <Content Include="Images\p5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\p6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

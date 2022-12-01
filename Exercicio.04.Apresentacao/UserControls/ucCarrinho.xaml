@@ -37,7 +37,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Margin="5 85 0 10">
-                    <DataGrid ItemsSource="{Binding Produtos}" SelectedItem="{Binding ProdutoSelecionado}"
+                    <DataGrid ItemsSource="{Binding Pedido.Produtos}" SelectedItem="{Binding ProdutoSelecionado}"
                           HeadersVisibility="None" AutoGenerateColumns="False"
                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridLinesVisibility="None"
                           CanUserAddRows="False">
@@ -155,7 +155,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <TextBlock Text="Total:  " FontSize="16"/>
                         <TextBlock Text="R$ " FontSize="16" FontWeight="SemiBold"/>
-                        <TextBlock Text="{Binding Total}" FontSize="16" FontWeight="SemiBold"/>
+                        <TextBlock Text="{Binding Pedido.Total}" FontSize="16" FontWeight="SemiBold"/>
                     </StackPanel>
                 </Grid>
 
@@ -201,7 +201,7 @@
                     </Grid>
 
                     <TextBlock Text="Número Cartão" Style="{StaticResource titulo}"/>
-                    <TextBox Margin="0 5 0 30"/>
+                    <TextBox Margin="0 5 0 30" Text="{Binding Cartao.Numero}"/>
 
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -211,17 +211,17 @@
 
                         <StackPanel>
                             <TextBlock Text="Data de Validade" Style="{StaticResource titulo}"/>
-                            <TextBox Margin="0 5 0 0"/>
+                            <TextBox Margin="0 5 0 0" Text="{Binding Cartao.Validade}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Margin="30 0 0 0" Width="50">
                             <TextBlock Text="CVV" Style="{StaticResource titulo}"/>
-                            <TextBox Margin="0 5 0 0"/>
+                            <TextBox Margin="0 5 0 0" Text="{Binding Cartao.CVV}"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
 
-                <Button Content="Finalizar" Style="{StaticResource botaoFinalizar}"/>
+                <Button Content="Finalizar" Style="{StaticResource botaoFinalizar}" CommandParameter="{Binding}" Command="{Binding FinalizarPedido}"/>
             </Grid>
             <!--#endregion checkout -->
         </Grid>

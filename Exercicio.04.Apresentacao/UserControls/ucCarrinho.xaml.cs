@@ -11,15 +11,10 @@ namespace Exercicio._04.Apresentacao.UserControls
     /// </summary>
     public partial class ucCarrinho : Page
     {
-        private ucCarrinho(ObservableCollection<ProdutoModel> produtos)
+        public ucCarrinho(PedidoModel pedido)
         {
             InitializeComponent();
-            DataContext = new CarrinhoViewModel(produtos);
-        }
-
-        public static ucCarrinho Obter(ObservableCollection<ProdutoModel> produtos)
-        {
-            return new ucCarrinho(produtos);
+            DataContext = new CarrinhoViewModel(pedido);
         }
     }
 }
