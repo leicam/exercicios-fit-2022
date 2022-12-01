@@ -22,11 +22,11 @@
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Background="#444444"
                     FlowDirection="RightToLeft">
             <Button Style="{StaticResource botaoFechar}" CommandParameter="{Binding}" Command="{Binding FecharJanela}">
-                <Image Width="20" Margin="2 0 0 0" Source="/Resources/Icons/close.png"/>
+                <Image Width="20" Margin="2 0 0 0" Source="/Icons/close.png"/>
             </Button>
 
             <Button Style="{StaticResource botaoMinimizar}" CommandParameter="{Binding}" Command="{Binding MinimizarJanela}">
-                <Image Width="20" Margin="5 0 0 0" Source="/Resources/Icons/mini.png" />
+                <Image Width="20" Margin="5 0 0 0" Source="/Icons/mini.png" />
             </Button>
         </StackPanel>
         <!--#endregion header-->

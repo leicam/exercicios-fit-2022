@@ -13,7 +13,6 @@ namespace Exercicio.Quatro.Apresentacao.Commands
             {
                 var vm = parameter as ListaViewModel;
                 vm.Pedido.AdicionarProduto(vm.ProdutoSelecionado);
-                MessageBox.Show("Produto adicionado ao carrinho com sucesso!", "Adicionar Produto", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {

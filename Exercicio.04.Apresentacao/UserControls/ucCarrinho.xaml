@@ -108,13 +108,13 @@
                                             <Button Style="{StaticResource botaoContador}" 
                                                 CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext}"
                                                 Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.AdicionarQuantidadeProdutoSelecionado}">
-                                                <Image Source="../Resources/Icons/add.png"/>
+                                                <Image Source="../Icons/add.png"/>
                                             </Button>
 
                                             <Button Style="{StaticResource botaoContador}" 
                                                 CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext}"
                                                 Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.RemoverQuantidadeProdutoSelecionado}" Margin="0 5 0 0">
-                                                <Image Source="../Resources/Icons/low.png"/>
+                                                <Image Source="../Icons/low.png"/>
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
@@ -140,7 +140,7 @@
                                                 CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext}"
                                                 Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.RemoverProdutoSelecionado}"
                                                 Margin="0 0 0 0">
-                                            <Image Source="../Resources/Icons/remove.png" Width="18"/>
+                                            <Image Source="../Icons/remove.png" Width="18"/>
                                         </Button>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -195,9 +195,9 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Grid.Column="0" HorizontalAlignment="Left" Source="Resources/Images/mastercard.png" Width="25" Style="{StaticResource icone}"/>
-                        <Image Grid.Column="1" HorizontalAlignment="Left" Source="Resources/Images/visa.png" Width="25" Style="{StaticResource icone}"/>
-                        <Image Grid.Column="2" HorizontalAlignment="Left" Source="Resources/Images/credit.png" Width="25" Style="{StaticResource icone}"/>
+                        <Image Grid.Column="0" HorizontalAlignment="Left" Source="../Images/mastercard.png" Width="25" Style="{StaticResource icone}"/>
+                        <Image Grid.Column="1" HorizontalAlignment="Left" Source="../Images/visa.png" Width="25" Style="{StaticResource icone}"/>
+                        <Image Grid.Column="2" HorizontalAlignment="Left" Source="../Images/credit.png" Width="25" Style="{StaticResource icone}"/>
                     </Grid>
 
                     <TextBlock Text="Número Cartão" Style="{StaticResource titulo}"/>

@@ -102,8 +102,8 @@
                 <Button Style="{StaticResource botaoRodape}" Margin="0 5 0 0" 
                         CommandParameter="{Binding }" Command="{Binding AdicionarProdutoCarrinho}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="../Resources/Icons/add-black.png" Width="20" Margin="15 3 0 0"/>
-                        <TextBlock Text="Adicionar" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        <Image Source="../Icons/add-black.png" Width="20" Margin="15 3 0 0"/>
+                        <TextBlock Text="Adicionar" VerticalAlignment="Center" Margin="5 0 15 0"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -115,8 +115,8 @@
 
                 <Button Style="{StaticResource botaoRodape}" Margin=" 0 5 0 0">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="../Resources/Icons/cart.png" Width="20" Margin="15 3 0 0"/>
-                        <TextBlock Text="Carrinho" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                        <Image Source="../Icons/cart.png" Width="20" Margin="15 3 0 0"/>
+                        <TextBlock Text="Carrinho" VerticalAlignment="Center" Margin="5 0 15 0"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
